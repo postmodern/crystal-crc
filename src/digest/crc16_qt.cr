@@ -48,7 +48,7 @@ module Digest
     # Calculates the final CRC16 QT checksum value.
     #
     def checksum
-      crc = @crc + 0
+      crc = super
       crc ^= @final_xor      if @final_xor
       crc = revert_bits(crc) if @reverse_crc_result
       return crc
