@@ -7,7 +7,7 @@ module Digest
   class CRC32Mpeg < CRC32
 
     # CRC XOR mask.
-    def self.xor_mask; 0x00000000_u32; end
+    class_getter xor_mask = 0x00000000_u32
 
     TABLE = [
       0x00000000, 0x04c11db7, 0x09823b6e, 0x0d4326d9,

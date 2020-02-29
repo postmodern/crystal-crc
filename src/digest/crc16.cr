@@ -43,7 +43,7 @@ module Digest
     ] of UInt16
 
     # Initial CRC value.
-    def self.init_crc; 0x0000_u16; end
+    class_getter init_crc = 0x0000_u16
 
     @table = TABLE
 

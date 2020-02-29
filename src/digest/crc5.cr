@@ -29,7 +29,7 @@ module Digest
     @crc_mask : UInt8
 
     # The CRC mask.
-    def self.crc_mask; 0x1f_u8 << 3; end
+    class_getter crc_mask : UInt8 = 0x1f_u8 << 3
 
     #
     # Initializes the CRC5 instance.
