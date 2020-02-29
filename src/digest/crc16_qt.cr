@@ -11,15 +11,7 @@ module Digest
     # final XOR mask.
     class_getter final_xor = 0xffff_u16
 
-    # Controls whether to reverse the bits in the CRC result.
-    class_getter? reverse_crc_result = true
-
-    # Controls whether to reverse the input data.
-    class_getter? reverse_data = true
-
     @final_xor : UInt16
-    @reverse_crc_result : Bool
-    @reverse_data       : Bool
 
     #
     # Initializes the CRC16QT instance.
@@ -27,9 +19,7 @@ module Digest
     def initialize(crc = self.class.init_crc)
       super(crc)
 
-      @final_xor          = self.class.final_xor
-      @reverse_crc_result = self.class.reverse_crc_result?
-      @reverse_data       = self.class.reverse_data?
+      @final_xor = self.class.final_xor
     end
 
     #
@@ -37,7 +27,7 @@ module Digest
     #
     def update(data)
       data.each_byte do |b|
-        b = revert_byte(b) if @reverse_data
+        b = revert_byte(b)
         @crc = ((@table[((@crc >> 8) ^ b) & 0xff] ^ (@crc << 8)) & 0xffff)
       end
 
@@ -49,8 +39,8 @@ module Digest
     #
     def checksum
       crc = super
-      crc ^= @final_xor      if @final_xor
-      crc = revert_bits(crc) if @reverse_crc_result
+      crc ^= @final_xor
+      crc = revert_bits(crc)
       return crc
     end
 
