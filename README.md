@@ -2,6 +2,7 @@
 
 * [Source](https://github.com/postmodern/digest-crc.cr)
 * [Issues](https://github.com/postmodern/digest-crc.cr/issues)
+* [Docs](https://postmodern.github.io/docs/digest-crc.cr/index.html)
 
 CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
 [digest-crc] Ruby library.
