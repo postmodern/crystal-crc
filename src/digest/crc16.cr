@@ -69,7 +69,7 @@ module Digest
       bytes = uninitialized UInt8[2]
 
       bytes[0] = ((crc & 0xff00) >> 8).to_u8
-      bytes[1] =  (crc & 0xff00).to_u8
+      bytes[1] =  (crc & 0x00ff).to_u8
 
       return bytes
     end
