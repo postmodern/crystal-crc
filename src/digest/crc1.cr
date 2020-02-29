@@ -9,7 +9,7 @@ module Digest
     #
     # Updates the CRC1 checksum.
     #
-    def update(data)
+    def update(data) : self
       accum = 0
       data.each_byte { |b| accum += b }
 
@@ -21,7 +21,7 @@ module Digest
     #
     # The packed CRC value.
     #
-    def result
+    def result : StaticArray(UInt8,1)
       bytes = uninitialized UInt8[1]
       bytes[0] = (checksum & 0xff).to_u8
       return bytes

@@ -26,7 +26,7 @@ module Digest
     #
     # Calculates the CRC checksum.
     #
-    def self.checksum(data)
+    def self.checksum(data) : UINT
       crc = self.new
       crc << data
 

@@ -88,9 +88,9 @@ module Digest
     # @param [String] data
     #   The data to update the checksum with.
     #
-    def update(data)
+    def update(data) : self
       data.each_byte do |b|
-        @crc = ((@table[(@crc ^ b) & 0xff] ^ (@crc >> 8)) & 0xffffffffffffffff_u64)
+        @crc = ((@table[(@crc ^ b) & 0xff] ^ (@crc >> 8)) & 0xffffffffffffffff)
       end
 
       return self
@@ -99,7 +99,7 @@ module Digest
     #
     # The packed CRC value.
     #
-    def result
+    def result : StaticArray(UInt8, 8)
       crc = checksum
       bytes = uninitialized UInt8[8]
 
@@ -110,7 +110,7 @@ module Digest
       bytes[4] = ((crc & 0x000000000ff000000) >> 24).to_u8
       bytes[5] = ((crc & 0x00000000000ff0000) >> 16).to_u8
       bytes[6] = ((crc & 0x0000000000000ff00) >> 8).to_u8
-      bytes[7] = (crc & 0x00000000000000ff).to_u8
+      bytes[7] =  (crc & 0x00000000000000ff).to_u8
 
       return bytes
     end

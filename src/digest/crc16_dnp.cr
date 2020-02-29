@@ -42,7 +42,7 @@ module Digest
     ] of UInt16
 
     # Initial CRC value.
-    class_getter init_crc = 0_u16
+    class_getter init_crc = 0x0_u16
 
     @table = TABLE
 

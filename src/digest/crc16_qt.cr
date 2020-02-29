@@ -9,7 +9,7 @@ module Digest
   class CRC16QT < CRC16CCITT
 
     # final XOR mask.
-    class_getter final_xor = 0xffff_u16
+    class_getter final_xor : UInt16 = 0xffff_u16
 
     @final_xor : UInt16
 
@@ -37,14 +37,14 @@ module Digest
     #
     # Calculates the final CRC16 QT checksum value.
     #
-    def checksum
+    def checksum : UInt16
       crc = super
       crc ^= @final_xor
       crc = revert_bits(crc)
       return crc
     end
 
-    private def revert_bits(cc)
+    private def revert_bits(cc : UInt16) : UInt16
       ob = 0_u16
       b  = (1_u16 << 15)
 
@@ -56,7 +56,7 @@ module Digest
       return ob
     end
 
-    private def revert_byte(cc)
+    private def revert_byte(cc : UInt8) : UInt16
       ob = 0_u16
       b  = (1_u16 << 7)
 

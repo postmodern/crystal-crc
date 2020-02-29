@@ -7,7 +7,7 @@ module Digest
   class CRC32Mpeg < CRC32
 
     # CRC XOR mask.
-    class_getter xor_mask = 0x00000000_u32
+    class_getter xor_mask : UInt32 = 0x00000000
 
     TABLE = [
       0x00000000, 0x04c11db7, 0x09823b6e, 0x0d4326d9,
@@ -84,7 +84,7 @@ module Digest
     # @param [String] data
     #   The data to update the checksum with.
     #
-    def update(data)
+    def update(data) : self
       data.each_byte do |b|
         @crc = ((@table[((@crc >> 24) ^ b) & 0xff] ^ (@crc << 8)) & 0xffffffff)
       end

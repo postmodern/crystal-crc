@@ -29,7 +29,7 @@ module Digest
     @crc_mask : UInt8
 
     # The CRC mask.
-    class_getter crc_mask : UInt8 = 0x1f_u8 << 3
+    class_getter crc_mask : UInt8 = (0x1f_u8 << 3)
 
     #
     # Initializes the CRC5 instance.
@@ -47,7 +47,7 @@ module Digest
     # @param [String] data
     #   The data to update the checksum with.
     #
-    def update(data)
+    def update(data) : self
       data.each_byte do |b|
         @crc = ((@table[(@crc ^ b) & 0xff] ^ (@crc >> 8)) & @crc_mask)
       end
@@ -58,9 +58,9 @@ module Digest
     #
     # The packed CRC value.
     #
-    def result
+    def result : StaticArray(UInt8, 1)
       bytes = uninitialized UInt8[1]
-      bytes[0] = (checksum & 0xff)
+      bytes[0] = (checksum & 0xff).to_u8
       return bytes
     end
 

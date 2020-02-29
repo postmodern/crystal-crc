@@ -43,7 +43,7 @@ module Digest
     ] of UInt16
 
     # Initial CRC value.
-    class_getter init_crc = 0x0000_u16
+    class_getter init_crc : UInt16 = 0x0000_u16
 
     @table = TABLE
 
@@ -53,7 +53,7 @@ module Digest
     # @param [String] data
     #   The data to update the checksum with.
     #
-    def update(data)
+    def update(data) : self
       data.each_byte do |b|
         @crc = ((@table[(@crc ^ b) & 0xff] ^ (@crc >> 8)) & 0xffff)
       end
@@ -64,12 +64,12 @@ module Digest
     #
     # The packed CRC result.
     #
-    def result : UInt8[2]
+    def result : StaticArray(UInt8, 2)
       crc   = checksum
       bytes = uninitialized UInt8[2]
 
       bytes[0] = ((crc & 0xff00) >> 8).to_u8
-      bytes[1] = ((crc & 0xff)).to_u8
+      bytes[1] =  (crc & 0xff00).to_u8
 
       return bytes
     end

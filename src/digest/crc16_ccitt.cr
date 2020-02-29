@@ -43,14 +43,14 @@ module Digest
     ] of UInt16
 
     # Initial CRC value.
-    class_getter init_crc = 0xffff_u16
+    class_getter init_crc : UInt16 = 0xffff_u16
 
     @table = TABLE
 
     #
     # Updates the CRC16 CCITT checksum.
     #
-    def update(data)
+    def update(data) : self
       data.each_byte do |b|
         @crc = ((@table[((@crc >> 8) ^ b) & 0xff] ^ (@crc << 8)) & 0xffff)
       end
