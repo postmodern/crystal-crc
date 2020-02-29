@@ -8,15 +8,22 @@ module Digest
   #
   class CRC16QT < CRC16CCITT
 
+    # final XOR mask.
     class_getter final_xor = 0xffff_u16
 
+    # Controls whether to reverse the bits in the CRC result.
     class_getter? reverse_crc_result = true
+
+    # Controls whether to reverse the input data.
     class_getter? reverse_data = true
 
     @final_xor : UInt16
     @reverse_crc_result : Bool
     @reverse_data       : Bool
 
+    #
+    # Initializes the CRC16QT instance.
+    #
     def initialize(crc = self.class.init_crc)
       super(crc)
 
@@ -37,6 +44,9 @@ module Digest
       return self
     end
 
+    #
+    # Calculates the final CRC16 QT checksum value.
+    #
     def checksum
       crc = @crc + 0
       crc ^= @final_xor      if @final_xor

@@ -28,8 +28,12 @@ module Digest
 
     @crc_mask : UInt8
 
+    # The CRC mask.
     def self.crc_mask; 0x1f_u8 << 3; end
 
+    #
+    # Initializes the CRC5 instance.
+    #
     def initialize(crc = self.class.init_crc)
       super(crc)
 
@@ -51,6 +55,9 @@ module Digest
       return self
     end
 
+    #
+    # The packed CRC value.
+    #
     def result
       bytes = uninitialized UInt8[1]
       bytes[0] = (checksum & 0xff)

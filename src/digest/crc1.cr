@@ -18,6 +18,9 @@ module Digest
       return self
     end
 
+    #
+    # The packed CRC value.
+    #
     def result
       bytes = uninitialized UInt8[1]
       bytes[0] = (checksum & 0xff).to_u8

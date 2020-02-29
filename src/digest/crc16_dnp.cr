@@ -41,6 +41,7 @@ module Digest
       0x91af,  0xa7f1,  0xfd13,  0xcb4d,  0x48d7,  0x7e89,  0x246b,  0x1235
     ] of UInt16
 
+    # Initial CRC value.
     class_getter init_crc = 0_u16
 
     @table = TABLE
@@ -56,6 +57,9 @@ module Digest
       return self
     end
 
+    #
+    # Calculates the final CRC value.
+    #
     def final
       @crc = ~@crc
     end

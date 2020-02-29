@@ -42,6 +42,7 @@ module Digest
       0x8201, 0x42c0, 0x4380, 0x8341, 0x4100, 0x81c1, 0x8081, 0x4040
     ] of UInt16
 
+    # Initial CRC value.
     def self.init_crc; 0x0000_u16; end
 
     @table = TABLE
@@ -60,6 +61,9 @@ module Digest
       return self
     end
 
+    #
+    # The packed CRC result.
+    #
     def result : UInt8[2]
       crc   = checksum
       bytes = uninitialized UInt8[2]

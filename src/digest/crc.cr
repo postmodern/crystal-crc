@@ -3,14 +3,23 @@ require "digest/base"
 module Digest
   abstract class CRC(UINT) < ::Digest::Base
 
+    #
+    # The default initial CRC value.
+    #
     def self.init_crc : UINT
       UINT.new(0)
     end
 
+    #
+    # The default CRC XOR mask.
+    #
     def self.xor_mask : UINT
       UINT.new(0)
     end
 
+    #
+    # Initializes the CRC instance.
+    #
     def initialize(@crc : UINT = self.class.init_crc)
     end
 

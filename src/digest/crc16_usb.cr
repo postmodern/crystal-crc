@@ -6,8 +6,10 @@ module Digest
   #
   class CRC16USB < CRC16
 
+    # Initial CRC value.
     class_getter init_crc = 0xffff_u16
 
+    # CRC XOR mask.
     class_getter xor_mask = 0xffff_u16
 
   end
