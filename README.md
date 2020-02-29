@@ -108,6 +108,13 @@ module Digest
 end
 ```
 
+## Development
+
+CRC `TABLE` values for common CRC algorithms can be obtained from the [pycrc]
+tool:
+
+    ./pycrc.py --algorithm=table-driven --model=crc-32 --generate=c
+
 ## Contributing
 
 1. Fork it (<https://github.com/postmodern/digest/fork>)
@@ -122,3 +129,4 @@ end
 
 [crystal]: https://www.crystal-lang.org/
 [digest-crc]: https://github.com/postmodern/digest-crc
+[pycrc]: http://www.tty1.net/pycrc/
