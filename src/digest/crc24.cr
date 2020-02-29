@@ -68,9 +68,9 @@ module Digest
       crc   = checksum
       bytes = uninitialized UInt8[3]
 
-      bytes[0] = ((crc & 0xff0000_u32) >> 16).to_u8
-      bytes[1] = ((crc & 0x00ff00_u32) >> 8).to_u8
-      bytes[2] =  (crc & 0x0000ff_u32).to_u8
+      bytes[0] = ((crc & 0xff0000) >> 16).to_u8
+      bytes[1] = ((crc & 0x00ff00) >> 8).to_u8
+      bytes[2] =  (crc & 0x0000ff).to_u8
 
       return bytes
     end
