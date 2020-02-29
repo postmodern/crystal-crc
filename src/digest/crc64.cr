@@ -103,13 +103,13 @@ module Digest
       crc = checksum
       bytes = uninitialized UInt8[8]
 
-      bytes[0] = ((crc & 0x0ff00000000000000) >> 56).to_u8
-      bytes[1] = ((crc & 0x000ff000000000000) >> 48).to_u8
-      bytes[2] = ((crc & 0x00000ff0000000000) >> 40).to_u8
-      bytes[3] = ((crc & 0x0000000ff00000000) >> 32).to_u8
-      bytes[4] = ((crc & 0x000000000ff000000) >> 24).to_u8
-      bytes[5] = ((crc & 0x00000000000ff0000) >> 16).to_u8
-      bytes[6] = ((crc & 0x0000000000000ff00) >> 8).to_u8
+      bytes[0] = ((crc & 0xff00000000000000) >> 56).to_u8
+      bytes[1] = ((crc & 0x00ff000000000000) >> 48).to_u8
+      bytes[2] = ((crc & 0x0000ff0000000000) >> 40).to_u8
+      bytes[3] = ((crc & 0x000000ff00000000) >> 32).to_u8
+      bytes[4] = ((crc & 0x00000000ff000000) >> 24).to_u8
+      bytes[5] = ((crc & 0x0000000000ff0000) >> 16).to_u8
+      bytes[6] = ((crc & 0x000000000000ff00) >> 8).to_u8
       bytes[7] =  (crc & 0x00000000000000ff).to_u8
 
       return bytes
