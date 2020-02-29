@@ -21,6 +21,7 @@ module Digest
       crc = self.new
       crc << data
 
+      crc.final
       crc.checksum
     end
 
