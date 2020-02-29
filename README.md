@@ -47,16 +47,16 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
 Calculate a CRC32:
 
 ```crystal
-require 'digest/crc32'
+require "digest/crc32"
 
-Digest::CRC32.hexdigest('hello')
+Digest::CRC32.hexdigest("hello")
 # => "3610a686"
 ```
 
 Calculate a CRC32 of a file:
 
 ```crystal
-Digest::CRC32.file('README.md')
+Digest::CRC32.file("README.md")
 # => #<Digest::CRC32: 127ad531>
 ```
 
@@ -64,9 +64,9 @@ Incrementally calculate a CRC32:
 
 ```crystal
 crc = Digest::CRC32.new
-crc << 'one'
-crc << 'two'
-crc << 'three'
+crc << "one"
+crc << "two"
+crc << "three"
 crc.hexdigest
 # => "09e1c092"
 ```
@@ -81,7 +81,7 @@ crc.checksum
 Defining your own CRC class:
 
 ```crystal
-require 'digest/crc32'
+require "digest/crc32"
 
 module Digest
   class CRC3000 < CRC32
