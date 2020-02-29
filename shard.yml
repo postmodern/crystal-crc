@@ -1,6 +1,9 @@
 name: digest-crc
 version: 0.1.0
 
+description: |
+  CRC (Cyclic Redundancy Check) algorithms (CRC1, CRC5, CRC8, CRC8 1Wire, CRC16, CRC16 CCITT, CRC16 DNP, CRC16 Modbus, CRC16 USB, CRC16 XModem, CRC16 ZModem, CRC16 QT, CRC24, CRC32, CRC32 c, CRC32 MPEG, CRC64)
+
 authors:
   - Postmodern <postmodern.mod3@gmail.com>
 
