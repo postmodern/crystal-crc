@@ -14,19 +14,29 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
   * `Digest::CRC5`
   * `Digest::CRC8`
   * `Digest::CRC81Wire`
+  * `Digest::CRC15`
   * `Digest::CRC16`
   * `Digest::CRC16CCITT`
   * `Digest::CRC16DNP`
+  * `Digest::CRC16Genibus`
+  * `Digest::CRC16Kermit`
   * `Digest::CRC16Modbus`
   * `Digest::CRC16USB`
+  * `Digest::CRC16X25`
   * `Digest::CRC16XModem`
   * `Digest::CRC16ZModem`
   * `Digest::CRC16QT`
   * `Digest::CRC24`
   * `Digest::CRC32`
   * `Digest::CRC32c`
+  * `Digest::CRC32BZip2`
+  * `Digest::CRC32Jam`
   * `Digest::CRC32Mpeg`
+  * `Digest::CRC32POSIX`
+  * `Digest::CRC32XFER`
   * `Digest::CRC64`
+  * `Digest::CRC64Jones`
+  * `Digest::CRC64XZ`
 * Pure Crystal implementation.
 * Uses Crystal's `Digest::Base` class.
 * Provides CRC Tables for optimized calculations.

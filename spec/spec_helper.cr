@@ -1,10 +1,10 @@
 require "spectator"
 
-macro crc_specs_for(klass, string, expected)
+macro crc_specs_for(klass, string, expected_checksum, expected_hexdigest)
   Spectator.describe {{ klass }} do
     let(string) { {{ string }} }
-    let(expected) { {{ expected }} }
-    let(expected_hexdigest) { "%02x" % {{ expected }} }
+    let(expected_hexdigest) { {{ expected_hexdigest }} }
+    let(expected_checksum) { {{ expected_checksum }} }
 
     it "should calculate a checksum for text" do
       expect(described_class.hexdigest(string)).to be == expected_hexdigest
@@ -28,7 +28,15 @@ macro crc_specs_for(klass, string, expected)
       crc = subject
       crc << string
 
-      expect(crc.checksum).to be == expected
+      expect(crc.checksum).to be == expected_checksum
     end
   end
+end
+
+macro crc_specs_for(klass, string, expected_checksum)
+  crc_specs_for( {{ klass }}, {{ string }}, {{ expected_checksum }}, {{ expected_checksum }}.to_s(16))
+end
+
+Spectator.configure do |config|
+  config.formatter = Spectator::Formatting::DocumentFormatter.new
 end
