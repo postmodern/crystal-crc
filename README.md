@@ -14,6 +14,7 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
   * `Digest::CRC5`
   * `Digest::CRC8`
   * `Digest::CRC81Wire`
+  * `Digest::CRC15`
   * `Digest::CRC16`
   * `Digest::CRC16CCITT`
   * `Digest::CRC16DNP`
