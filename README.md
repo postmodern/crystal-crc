@@ -19,6 +19,7 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
   * `Digest::CRC16CCITT`
   * `Digest::CRC16DNP`
   * `Digest::CRC16Genibus`
+  * `Digest::CRC16Kermit`
   * `Digest::CRC16Modbus`
   * `Digest::CRC16USB`
   * `Digest::CRC16X25`
