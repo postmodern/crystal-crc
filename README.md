@@ -31,7 +31,7 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
   * `Digest::CRC32c`
   * `Digest::CRC32BZip2`
   * `Digest::CRC32Jam`
-  * `Digest::CRC32Mpeg`
+  * `Digest::CRC32MPEG`
   * `Digest::CRC32POSIX`
   * `Digest::CRC32XFER`
   * `Digest::CRC64`

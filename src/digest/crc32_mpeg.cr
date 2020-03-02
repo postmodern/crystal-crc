@@ -2,9 +2,9 @@ require "./crc32"
 
 module Digest
   #
-  # Implements the CRC32 Mpeg algorithm.
+  # Implements the CRC32 MPEG algorithm.
   #
-  class CRC32Mpeg < CRC32
+  class CRC32MPEG < CRC32
 
     # CRC XOR mask.
     class_getter xor_mask : UInt32 = 0x00000000_u32
@@ -80,7 +80,7 @@ module Digest
     @table = TABLE
 
     #
-    # Updates the CRC32 Mpeg checksum.
+    # Updates the CRC32 MPEG checksum.
     #
     # @param [String] data
     #   The data to update the checksum with.
