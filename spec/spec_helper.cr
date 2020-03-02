@@ -36,7 +36,3 @@ end
 macro crc_specs_for(klass, string, expected_checksum)
   crc_specs_for( {{ klass }}, {{ string }}, {{ expected_checksum }}, {{ expected_checksum }}.to_s(16))
 end
-
-Spectator.configure do |config|
-  config.formatter = Spectator::Formatting::DocumentFormatter.new
-end
