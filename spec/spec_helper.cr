@@ -32,7 +32,3 @@ macro crc_specs_for(klass, string, expected)
     end
   end
 end
-
-Spectator.configure do |config|
-  config.formatter = Spectator::Formatting::DocumentFormatter.new
-end
