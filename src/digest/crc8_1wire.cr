@@ -29,4 +29,7 @@ module Digest
     @table = TABLE
 
   end
+
+  # Deprecated: please use CRC8_1Wire instead.
+  alias CRC81Wire = CRC8_1Wire
 end

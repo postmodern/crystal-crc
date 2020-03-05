@@ -94,4 +94,7 @@ module Digest
     end
 
   end
+
+  # Deprecated: please use CRC32MPEG instead.
+  alias CRC32Mpeg = CRC32MPEG
 end
