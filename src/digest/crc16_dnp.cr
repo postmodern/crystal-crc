@@ -49,19 +49,19 @@ module Digest
     #
     # Updates the CRC16 DNP checksum.
     #
-    def update(data)
-      data.each_byte do |b|
+    def update_impl(data : Bytes) : Nil
+      data.each do |b|
         @crc = ((@crc >> 8) ^ @table[(@crc ^ b) & 0xff])
       end
-
-      return self
     end
 
     #
     # Calculates the final CRC value.
     #
-    def final
+    def final_impl(dst : Bytes) : Nil
       @crc = ~@crc
+
+      super(dst)
     end
 
   end

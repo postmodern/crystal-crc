@@ -6,12 +6,16 @@ module Digest
   #
   class CRC1 < CRC(UInt32) # TODO: optimize algo to use UInt8
 
+    def digest_size
+      1
+    end
+
     #
     # Updates the CRC1 checksum.
     #
-    def update(data) : self
+    def update_impl(data : Bytes) : Nil
       accum = 0
-      data.each_byte { |b| accum += b }
+      data.each { |b| accum += b }
 
       @crc += (accum % 256)
 
@@ -21,10 +25,8 @@ module Digest
     #
     # The packed CRC value.
     #
-    def result : StaticArray(UInt8,1)
-      bytes = uninitialized UInt8[1]
-      bytes[0] = (checksum & 0xff).to_u8
-      return bytes
+    def final_impl(dst : Bytes) : Nil
+      dst[0] = (checksum & 0xff).to_u8
     end
 
   end

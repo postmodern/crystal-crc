@@ -25,13 +25,11 @@ module Digest
     #
     # Updates the CRC16 checksum.
     #
-    def update(data)
-      data.each_byte do |b|
+    def update_impl(data : Bytes) : Nil
+      data.each do |b|
         b = revert_byte(b)
         @crc = ((@table[((@crc >> 8) ^ b) & 0xff] ^ (@crc << 8)) & 0xffff)
       end
-
-      return self
     end
 
     #

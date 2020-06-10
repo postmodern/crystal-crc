@@ -107,12 +107,10 @@ module Digest
 
     @table = TABLE
 
-    def update(data)
-      data.each_byte do |b|
+    def update_impl(data : Bytes) : Nil
+      data.each do |b|
         @crc = (((@crc >> 8) & 0x00ffffff) ^ @table[(@crc ^ b) & 0xff])
       end
-
-      return self
     end
   end
 end

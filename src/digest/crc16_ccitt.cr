@@ -50,12 +50,10 @@ module Digest
     #
     # Updates the CRC16 CCITT checksum.
     #
-    def update(data) : self
-      data.each_byte do |b|
+    def update_impl(data : Bytes) : Nil
+      data.each do |b|
         @crc = ((@table[((@crc >> 8) ^ b) & 0xff] ^ (@crc << 8)) & 0xffff)
       end
-
-      return self
     end
 
   end

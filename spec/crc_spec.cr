@@ -3,25 +3,23 @@ require "../src/digest/crc"
 
 Spectator.describe Digest::CRC do
   context "when inherited" do
-    class SubClass < Digest::CRC(UInt16)
+    class SubClass < Digest::CRC(UInt8)
       TABLE = [0x01, 0x02, 0x03, 0x04]
 
       @table = TABLE
 
-      class_getter init_crc = 0x01_u16
+      class_getter init_crc = 0x01_u8
 
-      class_getter xor_mask = 0x02_u16
+      class_getter xor_mask = 0x02_u8
 
       getter crc
 
-      def update(data)
+      def update_impl(data)
         @crc = (@crc << 1) | 0x1
       end
 
-      def result
-        buffer = uninitialized UInt8[1]
-        buffer[0] = 0x42_u8
-        buffer
+      def final_impl(dst : Bytes) : Nil
+        dst[0] = 0x42_u8
       end
     end
 
@@ -34,7 +32,7 @@ Spectator.describe Digest::CRC do
     end
 
     describe "#checksum" do
-      subject { SubClass.new(0x1) }
+      subject { SubClass.new(0x1_u8) }
 
       it "must XOR the @crc with the xor_mask" do
         expect(subject.checksum).to be == (subject.crc ^ SubClass.xor_mask)

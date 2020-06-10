@@ -17,8 +17,8 @@ macro crc_specs_for(klass, string, expected_checksum, expected_hexdigest)
       chunk2 = string[middle..-1]
 
       hexdigest = described_class.hexdigest do |crc|
-        crc << chunk1
-        crc << chunk2
+        crc.update(chunk1)
+        crc.update(chunk2)
       end
 
       expect(hexdigest).to be == expected_hexdigest
@@ -26,7 +26,7 @@ macro crc_specs_for(klass, string, expected_checksum, expected_hexdigest)
 
     it "should provide direct access to the checksum value" do
       crc = subject
-      crc << string
+      crc.update(string)
 
       expect(crc.checksum).to be == expected_checksum
     end

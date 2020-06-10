@@ -35,24 +35,12 @@ module Digest
     end
 
     #
-    # Updates the CRC checksum with the given data.
-    #
-    abstract def update(data)
-
-    #
     # @see #update
     #
     @[AlwaysInline]
     def <<(data)
       update(data)
       self
-    end
-
-    #
-    # Resets the CRC checksum.
-    #
-    def reset
-      @crc = self.class.init_crc
     end
 
     #
@@ -63,15 +51,28 @@ module Digest
     end
 
     #
-    # Finalizes the CRC checksum calculation.
+    # Updates the CRC checksum with the given data.
     #
-    def final
+    abstract def update_impl(data : Bytes) : Nil
+
+    #
+    # Packs the final CRC result.
+    #
+    abstract def final_impl(dst : Bytes) : Nil
+
+    #
+    # Resets the CRC checksum.
+    #
+    def reset_impl : Nil
+      @crc = self.class.init_crc
     end
 
     #
-    # The packed CRC result.
+    # The size of the resulting CRC checksum.
     #
-    abstract def result
+    def digest_size : Int32
+      sizeof(UINT)
+    end
 
   end
 end
