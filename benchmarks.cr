@@ -43,13 +43,13 @@ end
 
 puts "Benchmarking Digest::CRC classes ..."
 Benchmark.bm do |b|
-  {% for constant in CRCs.values %}
+  {% for file, constant in CRCs %}
     {% begin %}
-      b.report("Digest::{{ constant.id }}#update") do
-        crc = Digest::{{ constant.id }}.new
+      {{ file.id }} = Digest::{{ constant.id }}.new
 
+      b.report("Digest::{{ constant.id }}#update") do
         SAMPLES.each do |sample|
-          crc.update(sample)
+          {{ file.id }}.update(sample)
         end
       end
     {% end %}
