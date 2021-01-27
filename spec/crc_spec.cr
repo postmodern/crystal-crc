@@ -14,8 +14,9 @@ Spectator.describe Digest::CRC do
 
       getter crc
 
-      def update_impl(data)
+      def update_impl(data) : Nil
         @crc = (@crc << 1) | 0x1
+        return nil
       end
 
       def final_impl(dst : Bytes) : Nil
