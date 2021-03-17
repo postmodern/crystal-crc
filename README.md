@@ -38,7 +38,7 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
   * `CRC64Jones`
   * `CRC64XZ`
 * Pure Crystal implementation.
-* Uses Crystal's `Digest::Base` class.
+* Uses Crystal's `Digest` class.
 * Provides CRC Tables for optimized calculations.
 
 ## Installation
