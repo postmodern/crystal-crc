@@ -1,4 +1,4 @@
 require "./spec_helper"
-require "../src/digest/crc32_jam"
+require "../src/crc/crc32_jam"
 
-crc_specs_for Digest::CRC32Jam, "1234567890", 0xd9e2511a
+crc_specs_for CRC::CRC32Jam, "1234567890", 0xd9e2511a

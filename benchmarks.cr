@@ -30,7 +30,7 @@ CRCs = {
 }
 
 {% for file in CRCs.keys %}
-require "./src/digest/{{ file.id }}"
+require "./src/crc/{{ file.id }}"
 {% end %}
 
 N = 1000
@@ -41,13 +41,13 @@ SAMPLES = Array.new(N) do
   Array.new(BLOCK_SIZE) { rand(256).chr }.join
 end
 
-puts "Benchmarking Digest::CRC classes ..."
+puts "Benchmarking CRC::CRC classes ..."
 Benchmark.bm do |b|
   {% for file, constant in CRCs %}
     {% begin %}
-      {{ file.id }} = Digest::{{ constant.id }}.new
+      {{ file.id }} = CRC::{{ constant.id }}.new
 
-      b.report("Digest::{{ constant.id }}#update") do
+      b.report("CRC::{{ constant.id }}#update") do
         SAMPLES.each do |sample|
           {{ file.id }}.update(sample)
         end

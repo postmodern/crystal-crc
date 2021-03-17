@@ -1,4 +1,4 @@
 require "./spec_helper"
-require "../src/digest/crc16_kermit"
+require "../src/crc/crc16_kermit"
 
-crc_specs_for Digest::CRC16Kermit, "1234567890", 0x286b
+crc_specs_for CRC::CRC16Kermit, "1234567890", 0x286b

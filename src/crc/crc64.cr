@@ -1,10 +1,10 @@
-require "./crc"
+require "./base"
 
-module Digest
+module CRC
   #
   # Implements the CRC64 algorithm.
   #
-  class CRC64 < CRC(UInt64)
+  class CRC64 < Base(UInt64)
 
     # Initial CRC value.
     class_getter init_crc = 0x0000000000000000_u64

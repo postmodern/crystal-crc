@@ -1,6 +1,6 @@
 require "./crc16_ccitt"
 
-module Digest
+module CRC
   #
   # Implements the CRC16_CCITT algorithm used in QT algorithms.
   #

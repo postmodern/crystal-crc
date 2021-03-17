@@ -1,4 +1,4 @@
 require "./spec_helper"
-require "../src/digest/crc15"
+require "../src/crc/crc15"
 
-crc_specs_for Digest::CRC15, "1234567890", 0x178c
+crc_specs_for CRC::CRC15, "1234567890", 0x178c

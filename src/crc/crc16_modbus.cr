@@ -1,6 +1,6 @@
 require "./crc16"
 
-module Digest
+module CRC
   #
   # Implements the CRC16 Modbus algorithm.
   #

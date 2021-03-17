@@ -1,5 +1,5 @@
 require "./spec_helper"
-require "../src/digest/crc5"
+require "../src/crc/crc5"
 
 # TODO: fix CRC5
-# crc_specs_for Digest::CRC5, "1234567890", 0x1
+# crc_specs_for CRC::CRC5, "1234567890", 0x1

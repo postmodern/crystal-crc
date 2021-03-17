@@ -1,6 +1,6 @@
 require "./crc64"
 
-module Digest
+module CRC
   #
   # Implements the CRC64 Jones algorithm.
   #

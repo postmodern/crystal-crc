@@ -1,10 +1,10 @@
-require "./crc"
+require "./base"
 
-module Digest
+module CRC
   #
   # Implements the CRC8 algorithm.
   #
-  class CRC8 < CRC(UInt8)
+  class CRC8 < Base(UInt8)
 
     # Initial CRC value.
     class_getter init_crc : UInt8 = 0x00

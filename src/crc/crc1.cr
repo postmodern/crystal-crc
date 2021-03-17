@@ -1,10 +1,10 @@
-require "./crc"
+require "./base"
 
-module Digest
+module CRC
   #
   # Implements the CRC1 algorithm.
   #
-  class CRC1 < CRC(UInt32) # TODO: optimize algo to use UInt8
+  class CRC1 < Base(UInt32) # TODO: optimize algo to use UInt8
 
     def digest_size
       1

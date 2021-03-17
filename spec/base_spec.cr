@@ -1,9 +1,9 @@
 require "./spec_helper"
-require "../src/digest/crc"
+require "../src/crc/base"
 
-Spectator.describe Digest::CRC do
+Spectator.describe CRC::Base do
   context "when inherited" do
-    class SubClass < Digest::CRC(UInt8)
+    class SubClass < CRC::Base(UInt8)
       TABLE = [0x01, 0x02, 0x03, 0x04]
 
       @table = TABLE

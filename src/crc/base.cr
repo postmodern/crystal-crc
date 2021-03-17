@@ -1,7 +1,7 @@
 require "digest/base"
 
-module Digest
-  abstract class CRC(UINT) < ::Digest::Base
+module CRC
+  abstract class Base(UINT) < ::Digest::Base
 
     #
     # The default initial CRC value.

@@ -1,4 +1,4 @@
 require "./spec_helper"
-require "../src/digest/crc32_bzip2"
+require "../src/crc/crc32_bzip2"
 
-crc_specs_for Digest::CRC32BZip2, "1234567890", 0x506853b6
+crc_specs_for CRC::CRC32BZip2, "1234567890", 0x506853b6

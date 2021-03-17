@@ -1,6 +1,6 @@
 require "./crc8"
 
-module Digest
+module CRC
   #
   # Implements the CRC8 1-Wire algorithm.
   #

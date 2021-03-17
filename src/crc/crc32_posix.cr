@@ -1,6 +1,6 @@
 require "./crc32"
 
-module Digest
+module CRC
   #
   # Implements the CRC32 POSIX algorithm.
   #
