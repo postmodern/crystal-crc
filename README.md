@@ -38,7 +38,7 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
   * `CRC64Jones`
   * `CRC64XZ`
 * Pure Crystal implementation.
-* Uses Crystal's `Digest` class.
+* Uses Crystal's [Digest] class.
 * Provides CRC Tables for optimized calculations.
 
 ## Installation
@@ -172,3 +172,4 @@ tool:
 [crystal]: https://www.crystal-lang.org/
 [digest-crc]: https://github.com/postmodern/digest-crc
 [pycrc]: http://www.tty1.net/pycrc/
+[Digest]: https://crystal-lang.org/api/Digest.html
