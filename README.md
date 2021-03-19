@@ -49,6 +49,7 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
    dependencies:
      crc:
        github: postmodern/crystal-crc
+       version: ~> 1.0
    ```
 
 2. Run `shards install`
