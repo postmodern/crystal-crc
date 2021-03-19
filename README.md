@@ -1,8 +1,8 @@
-# crc.cr
+# crystal-crc
 
-* [Source](https://github.com/postmodern/crc.cr)
-* [Issues](https://github.com/postmodern/crc.cr/issues)
-* [Docs](https://postmodern.github.io/docs/crc.cr/index.html)
+* [Source](https://github.com/postmodern/crystal-crc)
+* [Issues](https://github.com/postmodern/crystal-crc/issues)
+* [Docs](https://postmodern.github.io/docs/crystal-crc/index.html)
 
 CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
 [digest-crc] Ruby library and should be API compatible.
@@ -48,7 +48,7 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
    ```yaml
    dependencies:
      crc:
-       github: postmodern/crc.cr
+       github: postmodern/crystal-crc
    ```
 
 2. Run `shards install`
@@ -159,7 +159,7 @@ tool:
 
 ## Contributing
 
-1. Fork it (<https://github.com/postmodern/crc.cr/fork>)
+1. Fork it (<https://github.com/postmodern/crystal-crc/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
