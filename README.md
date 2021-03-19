@@ -58,7 +58,7 @@ CRC (Cyclic Redundancy Check) algorithms for [Crystal][crystal]. Based on the
 Calculate a CRC32:
 
 ```crystal
-require "digest/crc32"
+require "crc/crc32"
 
 CRC::CRC32.hexdigest("hello")
 # => "3610a686"
@@ -92,7 +92,7 @@ crc.checksum
 Defining your own CRC class:
 
 ```crystal
-require "digest/crc32"
+require "crc/crc32"
 
 module CRC
   class CRC3000 < CRC32
@@ -159,7 +159,7 @@ tool:
 
 ## Contributing
 
-1. Fork it (<https://github.com/postmodern/digest/fork>)
+1. Fork it (<https://github.com/postmodern/crc.cr/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
