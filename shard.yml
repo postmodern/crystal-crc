@@ -1,5 +1,5 @@
 name: crc
-version: 1.0.0
+version: 1.0.1
 
 description: |
   CRC (Cyclic Redundancy Check) algorithms (CRC1, CRC5, CRC8, CRC8 1Wire, CRC15, CRC16, CRC16 CCITT, CRC16 DNP, CRC16 Genibus, CRC16 Kermit, CRC16 Modbus, CRC16 USB, CRC16 X25, CRC16 XModem, CRC16 ZModem, CRC16 QT, CRC24, CRC32, CRC32 c, CRC32 BZip2, CRC32 Jam, CRC32 MPEG, CRC32 POSIX, CRC32 XFER, CRC64, CRC64 Jones, CRC64 XZ)
